@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.javatest.mapper.HelloMapper">
+    <select id="selectList" resultType="com.example.javatest.domain.HelloDO">
+        SELECT ldc.county_name AS 'countyName',
+        tf.CUM_Y_SUM AS 'tfYearAccu',tf.target AS 'tfTarget', tf.TIME_Y_RATIO AS 'tfPerComplete',tf.is_warn_y AS 'tfIsWarn',
+         chn.CUM_Y_SUM AS 'chnYearAccu',chn.target AS 'chnTarget', chn.TIME_Y_RATIO AS 'chnPerComplete',chn.is_warn_y AS 'chnIsWarn',
+         xrxc.CUM_Y_SUM AS 'xrxcYearAccu',xrxc.target AS 'xrxcTarget', xrxc.TIME_Y_RATIO AS 'xrxcPerComplete',xrxc.is_warn_y AS 'xrxcIsWarn'
+        FROM `lg_dept_county` ldc
+                 LEFT JOIN(
+            SELECT t1.`REGION_NAME`,
+                   t1.`OP_TIME`,
+                   t1.`CUM_Y_SUM`,
+                   (max_cum_ysum / t1.`TIME_Y_RATIO` * 100) 'target', t1.`TIME_Y_RATIO`,
+                   t1.`INDEX_NAME`,
+                   t1.`is_warn_y`
+            FROM (
+                     SELECT `REGION_NAME`, MAX(`OP_TIME`) AS max_op_time, MAX(`CUM_Y_SUM`) max_cum_ysum
+                     FROM `lg_index_mob_day_result`
+                     WHERE `INDEX_CODE` = '111402'
+                     GROUP BY `REGION_NAME`
+                 ) t2
+                     JOIN `lg_index_mob_day_result` t1
+                          ON t2.`REGION_NAME` = t1.`REGION_NAME`
+                              AND t2.max_op_time = t1.`OP_TIME`
+            WHERE t1.`INDEX_CODE` = '111402'
+            ORDER BY t1.`REGION_NAME`
+        ) tf
+                          ON tf.REGION_NAME = ldc.county_name
+                 LEFT JOIN(
+            SELECT t1.`REGION_NAME`,
+                   t1.`OP_TIME`,
+                   t1.`CUM_Y_SUM`,
+                   (max_cum_ysum / t1.`TIME_Y_RATIO` * 100) 'target', t1.`TIME_Y_RATIO`,
+                   t1.`INDEX_NAME`,
+                   t1.`is_warn_y`
+            FROM (
+                     SELECT `REGION_NAME`, MAX(`OP_TIME`) AS max_op_time, MAX(`CUM_Y_SUM`) max_cum_ysum
+                     FROM `lg_index_mob_day_result`
+                     WHERE `INDEX_CODE` = '111377'
+                     GROUP BY `REGION_NAME`
+                 ) t2
+                     JOIN `lg_index_mob_day_result` t1
+                          ON t2.`REGION_NAME` = t1.`REGION_NAME`
+                              AND t2.max_op_time = t1.`OP_TIME`
+            WHERE t1.`INDEX_CODE` = '111377'
+            ORDER BY t1.`REGION_NAME`
+        ) chn
+                          ON chn.REGION_NAME = ldc.county_name
+                 LEFT JOIN(
+            SELECT t1.`REGION_NAME`,
+                   t1.`OP_TIME`,
+                   t1.`CUM_Y_SUM`,
+                   (max_cum_ysum / t1.`TIME_Y_RATIO` * 100) 'target', t1.`TIME_Y_RATIO`,
+                   t1.`INDEX_NAME`,
+                   t1.`is_warn_y`
+            FROM (
+                     SELECT `REGION_NAME`, MAX(`OP_TIME`) AS max_op_time, MAX(`CUM_Y_SUM`) max_cum_ysum
+                     FROM `lg_index_mob_day_result`
+                     WHERE `INDEX_CODE` = '111283'
+                     GROUP BY `REGION_NAME`
+                 ) t2
+                     JOIN `lg_index_mob_day_result` t1
+                          ON t2.`REGION_NAME` = t1.`REGION_NAME`
+                              AND t2.max_op_time = t1.`OP_TIME`
+            WHERE t1.`INDEX_CODE` = '111283'
+            ORDER BY t1.`REGION_NAME`
+        ) xrxc
+                          ON xrxc.REGION_NAME = ldc.county_name
+        ORDER BY ldc.county_name
+    </select>
+
+
+
+</mapper>
