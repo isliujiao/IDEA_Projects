@@ -71,7 +71,9 @@
                           ON xrxc.REGION_NAME = ldc.county_name
         ORDER BY ldc.county_name
     </select>
-
+    <select id="getMap" resultType="java.lang.String">
+        select 'succeeds'
+    </select>
 
 
 </mapper>

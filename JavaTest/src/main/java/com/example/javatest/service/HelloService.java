@@ -13,4 +13,5 @@ public interface HelloService {
 
     List<HelloDO> select();
 
+    String getMap();
 }

@@ -5,6 +5,7 @@ import com.example.javatest.domain.HelloDO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author liujiao
@@ -14,4 +15,6 @@ import java.util.List;
 public interface HelloMapper {
 
     List<HelloDO> selectList();
+
+    String getMap();
 }

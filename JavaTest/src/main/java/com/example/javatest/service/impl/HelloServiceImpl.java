@@ -24,4 +24,10 @@ public class HelloServiceImpl implements HelloService {
         List<HelloDO> helloDOS = helloMapper.selectList();
         return helloDOS;
     }
+
+    @Override
+    public String getMap() {
+
+        return helloMapper.getMap();
+    }
 }
