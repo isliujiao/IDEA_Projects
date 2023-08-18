@@ -3,11 +3,93 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.example.javatest.mapper.HelloMapper">
+    <insert id="insterDacpAbility" parameterType="com.example.javatest.entity.zhongTai.DacpAbility">
+        INSERT INTO dacp_ability
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="null != stataData and '' != stataData">
+                stata_data,
+            </if>
+            <if test="null != bizCode and '' != bizCode">
+                biz_code,
+            </if>
+            <if test="null != bizDesc and '' != bizDesc">
+                biz_desc,
+            </if>
+            <if test="null != abilityId and '' != abilityId">
+                ability_id
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="null != stataData and '' != stataData">
+                #{stataData},
+            </if>
+            <if test="null != bizCode and '' != bizCode">
+                #{bizCode},
+            </if>
+            <if test="null != bizDesc and '' != bizDesc">
+                #{bizDesc},
+            </if>
+            <if test="null != abilityId and '' != abilityId">
+                #{abilityId}
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="insterDacpAbilityRelation" parameterType="com.example.javatest.entity.zhongTai.DacpAbilityRelation">
+        INSERT INTO dacp_ability_relation
+        (ability_orderId,create_time,planned_usedate,order_orgname,order_orgcode,order_orgcocode,
+        order_orgconame, app_name, app_code,dept_code,dept_name,user_cocode,user_coname,contact_name,contact_mobile,
+        contact_email,enterprise_code, enterprise_name,department_name,abilityId)
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            (#{item.abilityOrderId}, #{item.createTime}, #{item.plannedUseDate}, #{item.orderOrgName},
+            #{item.orderOrgCode}, #{item.orderOrgCoCode},
+            #{item.orderOrgCoName}, #{item.appName}, #{item.appCode},#{item.deptCode},#{item.deptName},
+            #{item.userCoCode}, #{item.userCoName}, #{item.contactName},
+            #{item.contactMobile}, #{item.contactEmail}, #{item.enterpriseCode}, #{item.enterpriseName},
+            #{item.departmentName}, #{item.abilityId})
+        </foreach>
+    </insert>
+
+    <insert id="insterDacpSub" parameterType="com.example.javatest.entity.zhongTai.DacpSub">
+        INSERT INTO dacp_sub
+        (sub_orderId,sub_orderstatus , sub_orderstatus_updatetime, ability_orderId)
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            (#{item.subOrderId},
+            #{item.suborderStatus},
+            #{item.suborderStatusUpdateTime},
+            #{item.abilityOrderId} )
+        </foreach>
+    </insert>
+    <insert id="insterDacpSubAbility" parameterType="com.example.javatest.entity.zhongTai.DacpSubAbility">
+        INSERT INTO dacp_sub_ability
+        (ability_code,ability_name ,middle_ground , abitlty_vender_name,apiZh_name ,api_code ,
+        api_status,api_status_desc ,api_start_time ,api_end_time , api_bill_start_time, sub_orderId)
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            ( #{item.abilityCode}, #{item.abilityName},
+            #{item.middleground}, #{item.abitltyVenderName},
+            #{item.apiZhName}, #{item.apiCode},
+            #{item.apiStatus}, #{item.apiStatusDesc},
+            #{item.apiStartTime}, #{item.apiEndTime},
+            #{item.apiBillStartTime}, #{item.subOrderId} )
+        </foreach>
+    </insert>
+    <insert id="insterDacpSubAbiliytBill" parameterType="com.example.javatest.entity.zhongTai.DacpSubAbiliytBill">
+        INSERT INTO dacp_sub_abiliyt_bill
+        (bill_modeId, bill_rullId, ability_code)
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            ( #{item.billModeId},
+            #{item.billRullId},
+            #{item.abilityCode} )
+        </foreach>
+    </insert>
+
+    <!-- ========================================================================================================-->
     <select id="selectList" resultType="com.example.javatest.domain.HelloDO">
-        SELECT ldc.county_name AS 'countyName',
-        tf.CUM_Y_SUM AS 'tfYearAccu',tf.target AS 'tfTarget', tf.TIME_Y_RATIO AS 'tfPerComplete',tf.is_warn_y AS 'tfIsWarn',
-         chn.CUM_Y_SUM AS 'chnYearAccu',chn.target AS 'chnTarget', chn.TIME_Y_RATIO AS 'chnPerComplete',chn.is_warn_y AS 'chnIsWarn',
-         xrxc.CUM_Y_SUM AS 'xrxcYearAccu',xrxc.target AS 'xrxcTarget', xrxc.TIME_Y_RATIO AS 'xrxcPerComplete',xrxc.is_warn_y AS 'xrxcIsWarn'
+        SELECT ldc.county_name AS 'countyName', tf.CUM_Y_SUM AS 'tfYearAccu',tf.target AS 'tfTarget', tf.TIME_Y_RATIO AS 'tfPerComplete',tf.is_warn_y AS 'tfIsWarn', chn.CUM_Y_SUM AS 'chnYearAccu',chn.target AS 'chnTarget', chn.TIME_Y_RATIO AS 'chnPerComplete',chn.is_warn_y AS 'chnIsWarn', xrxc.CUM_Y_SUM AS 'xrxcYearAccu',xrxc.target AS 'xrxcTarget', xrxc.TIME_Y_RATIO AS 'xrxcPerComplete',xrxc.is_warn_y AS 'xrxcIsWarn'
         FROM `lg_dept_county` ldc
                  LEFT JOIN(
             SELECT t1.`REGION_NAME`,

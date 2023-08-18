@@ -36,7 +36,7 @@ public class DacpSub implements Serializable {
     private String abilityOrderId;
 
     /**
-     *
+     * 订购集合
      */
     private List<DacpSubAbility> orderList;
 }
