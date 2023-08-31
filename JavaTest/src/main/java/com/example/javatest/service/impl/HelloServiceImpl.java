@@ -29,4 +29,9 @@ public class HelloServiceImpl implements HelloService {
 
         return helloMapper.getMap();
     }
+
+    @Override
+    public void inster(String test) {
+        helloMapper.insterStr(test);
+    }
 }

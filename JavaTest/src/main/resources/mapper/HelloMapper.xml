@@ -158,4 +158,9 @@
     </select>
 
 
+    <insert id="insterStr">
+        INSERT INTO test(`name`)
+        VALUES(#{test})
+    </insert>
+
 </mapper>

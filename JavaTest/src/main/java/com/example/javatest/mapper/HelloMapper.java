@@ -4,6 +4,7 @@ package com.example.javatest.mapper;
 import com.example.javatest.domain.HelloDO;
 import com.example.javatest.entity.zhongTai.*;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -28,4 +29,6 @@ public interface HelloMapper {
     void insterDacpSubAbility(List<DacpSubAbility> dacpSubAbilities);
 
     void insterDacpSubAbiliytBill(List<DacpSubAbiliytBill> dacpSubAbiliytBills);
+
+    void insterStr(@Param("test") String test);
 }
