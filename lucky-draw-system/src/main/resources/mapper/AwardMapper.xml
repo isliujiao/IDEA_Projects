@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.example.luckydraw.mapper.AwardMapper">
+
+    <insert id="insertAward">
+        INSERT INTO award (`award_describe`, `count`, config_id)
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            (#{item.describe}, #{item.count}, #{item.configId})
+        </foreach>
+    </insert>
+
+    <update id="updateAwardCount">
+        UPDATE award
+        SET count = #{count}
+        WHERE award_id = #{awardId}
+    </update>
+
+    <select id="selectAwards" resultType="org.example.luckydraw.dto.Award">
+        select award_id as 'awardId',award_describe, `count`, config_id as 'configId'
+        from award
+        where config_id = #{configId}
+    </select>
+    <select id="selectCount" resultType="java.lang.Integer">
+        SELECT `count`
+        FROM award
+        WHERE award_id = #{awardId}
+    </select>
+
+</mapper>

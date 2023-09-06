@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.example.luckydraw.mapper.WinnerMapper">
+    <insert id="insertWinner">
+        INSERT INTO winner (`name`, award_id, config_id)
+        VALUES (#{name}, #{awardId}, #{configId})
+    </insert>
+
+    <select id="countByAward" resultType="java.lang.Integer">
+        select count(*)
+        from winner
+        where config_id = #{configId}
+    </select>
+
+    <select id="selectWinnerList" resultType="org.example.luckydraw.dto.WinnerList">
+        SELECT t1.`name`, t2.award_describe as 'awardDescribe'
+        FROM winner t1
+        LEFT JOIN `award` t2
+        ON t1.`award_id` = t2.`award_id`
+        WHERE t2.`config_id` = #{id}
+    </select>
+</mapper>
