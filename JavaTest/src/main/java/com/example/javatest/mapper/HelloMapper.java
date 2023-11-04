@@ -30,5 +30,5 @@ public interface HelloMapper {
 
     void insterDacpSubAbiliytBill(List<DacpSubAbiliytBill> dacpSubAbiliytBills);
 
-    void insterStr(@Param("test") String test);
+    void insterStr(@Param("com.isliujiao.gpt.chatgpt.test") String test);
 }

@@ -52,8 +52,8 @@ class MissingResourceException extends RuntimeException {
 
     /**
      * Constructs a MissingResourceException with the specified information.
-     * A detail message is a String that describes this particular exception.
-     * @param s the detail message
+     * A detail com.isliujiao.gpt.chatgpt.message is a String that describes this particular exception.
+     * @param s the detail com.isliujiao.gpt.chatgpt.message
      * @param className the name of the resource class
      * @param key the key for the missing resource.
      */
@@ -65,12 +65,12 @@ class MissingResourceException extends RuntimeException {
 
     /**
      * Constructs a <code>MissingResourceException</code> with
-     * <code>message</code>, <code>className</code>, <code>key</code>,
+     * <code>com.isliujiao.gpt.chatgpt.message</code>, <code>className</code>, <code>key</code>,
      * and <code>cause</code>. This constructor is package private for
      * use by <code>ResourceBundle.getBundle</code>.
      *
      * @param message
-     *        the detail message
+     *        the detail com.isliujiao.gpt.chatgpt.message
      * @param className
      *        the name of the resource class
      * @param key

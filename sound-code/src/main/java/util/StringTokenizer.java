@@ -59,7 +59,7 @@ import java.lang.*;
  * <p>
  * The following is one example of the use of the tokenizer. The code:
  * <blockquote><pre>
- *     StringTokenizer st = new StringTokenizer("this is a test");
+ *     StringTokenizer st = new StringTokenizer("this is a com.isliujiao.gpt.chatgpt.test");
  *     while (st.hasMoreTokens()) {
  *         System.out.println(st.nextToken());
  *     }
@@ -70,7 +70,7 @@ import java.lang.*;
  *     this
  *     is
  *     a
- *     test
+ *     com.isliujiao.gpt.chatgpt.test
  * </pre></blockquote>
  *
  * <p>
@@ -82,7 +82,7 @@ import java.lang.*;
  * The following example illustrates how the <tt>String.split</tt>
  * method can be used to break up a string into its basic tokens:
  * <blockquote><pre>
- *     String[] result = "this is a test".split("\\s");
+ *     String[] result = "this is a com.isliujiao.gpt.chatgpt.test".split("\\s");
  *     for (int x=0; x&lt;result.length; x++)
  *         System.out.println(result[x]);
  * </pre></blockquote>
@@ -92,7 +92,7 @@ import java.lang.*;
  *     this
  *     is
  *     a
- *     test
+ *     com.isliujiao.gpt.chatgpt.test
  * </pre></blockquote>
  *
  * @author  unascribed

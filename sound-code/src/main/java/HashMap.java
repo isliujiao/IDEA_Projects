@@ -2028,7 +2028,7 @@ public class HashMap<K, V> extends AbstractMap<K, V>
          * successor that is pinned by "next" pointers that are accessible
          * independently during traversal. So instead we swap the tree
          * linkages. If the current tree appears to have too few nodes,
-         * the bin is converted back to a plain bin. (The test triggers
+         * the bin is converted back to a plain bin. (The com.isliujiao.gpt.chatgpt.test triggers
          * somewhere between 2 and 6 nodes, depending on tree structure).
          */
         final void removeTreeNode(HashMap<K, V> map, Node<K, V>[] tab,

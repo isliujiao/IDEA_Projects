@@ -1568,7 +1568,7 @@ public abstract class ResourceBundle {
     }
 
     /**
-     * Throw a MissingResourceException with proper message
+     * Throw a MissingResourceException with proper com.isliujiao.gpt.chatgpt.message
      */
     private static void throwMissingResourceException(String baseName,
                                                       Locale locale,

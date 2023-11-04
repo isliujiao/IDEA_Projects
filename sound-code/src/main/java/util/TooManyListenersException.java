@@ -51,8 +51,8 @@ public class TooManyListenersException extends Exception {
     private static final long serialVersionUID = 5074640544770687831L;
 
     /**
-     * Constructs a TooManyListenersException with no detail message.
-     * A detail message is a String that describes this particular exception.
+     * Constructs a TooManyListenersException with no detail com.isliujiao.gpt.chatgpt.message.
+     * A detail com.isliujiao.gpt.chatgpt.message is a String that describes this particular exception.
      */
 
     public TooManyListenersException() {
@@ -60,9 +60,9 @@ public class TooManyListenersException extends Exception {
     }
 
     /**
-     * Constructs a TooManyListenersException with the specified detail message.
-     * A detail message is a String that describes this particular exception.
-     * @param s the detail message
+     * Constructs a TooManyListenersException with the specified detail com.isliujiao.gpt.chatgpt.message.
+     * A detail com.isliujiao.gpt.chatgpt.message is a String that describes this particular exception.
+     * @param s the detail com.isliujiao.gpt.chatgpt.message
      */
 
     public TooManyListenersException(String s) {

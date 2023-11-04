@@ -617,7 +617,7 @@ public class SimpleTimeZone extends TimeZone {
 
         // If the year isn't representable with the 64-bit long
         // integer in milliseconds, convert the year to an
-        // equivalent year. This is required to pass some JCK test cases
+        // equivalent year. This is required to pass some JCK com.isliujiao.gpt.chatgpt.test cases
         // which are actually useless though because the specified years
         // can't be supported by the Java time system.
         if (y >= 292278994) {

@@ -217,7 +217,7 @@ public final class Objects {
      * </pre></blockquote>
      *
      * @param obj     the object reference to check for nullity
-     * @param message detail message to be used in the event that a {@code
+     * @param message detail com.isliujiao.gpt.chatgpt.message to be used in the event that a {@code
      *                NullPointerException} is thrown
      * @param <T> the type of the reference
      * @return {@code obj} if not {@code null}
@@ -270,15 +270,15 @@ public final class Objects {
      * throws a customized {@link NullPointerException} if it is.
      *
      * <p>Unlike the method {@link #requireNonNull(Object, String)},
-     * this method allows creation of the message to be deferred until
+     * this method allows creation of the com.isliujiao.gpt.chatgpt.message to be deferred until
      * after the null check is made. While this may confer a
      * performance advantage in the non-null case, when deciding to
      * call this method care should be taken that the costs of
-     * creating the message supplier are less than the cost of just
-     * creating the string message directly.
+     * creating the com.isliujiao.gpt.chatgpt.message supplier are less than the cost of just
+     * creating the string com.isliujiao.gpt.chatgpt.message directly.
      *
      * @param obj     the object reference to check for nullity
-     * @param messageSupplier supplier of the detail message to be
+     * @param messageSupplier supplier of the detail com.isliujiao.gpt.chatgpt.message to be
      * used in the event that a {@code NullPointerException} is thrown
      * @param <T> the type of the reference
      * @return {@code obj} if not {@code null}

@@ -591,12 +591,12 @@ public class IdentityHashMap<K,V>
         Object item;
         for (int i = nextKeyIndex(d, len); (item = tab[i]) != null;
              i = nextKeyIndex(i, len) ) {
-            // The following test triggers if the item at slot i (which
+            // The following com.isliujiao.gpt.chatgpt.test triggers if the item at slot i (which
             // hashes to be at slot r) should take the spot vacated by d.
             // If so, we swap it in, and then continue with d now at the
             // newly vacated i.  This process will terminate when we hit
             // the null slot at the end of this run.
-            // The test is messy because we are using a circular table.
+            // The com.isliujiao.gpt.chatgpt.test is messy because we are using a circular table.
             int r = hash(item, len);
             if ((i < r && (r <= d || d <= i)) || (r <= d && d <= i)) {
                 tab[d] = item;

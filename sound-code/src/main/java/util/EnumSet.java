@@ -46,7 +46,7 @@ import sun.misc.SharedSecrets;
  * occur while the iteration is in progress.
  *
  * <p>Null elements are not permitted.  Attempts to insert a null element
- * will throw {@link NullPointerException}.  Attempts to test for the
+ * will throw {@link NullPointerException}.  Attempts to com.isliujiao.gpt.chatgpt.test for the
  * presence of a null element or to remove one will, however, function
  * properly.
  *

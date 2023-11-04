@@ -668,7 +668,7 @@ public class ArrayList<E> extends AbstractList<E>
     }
 
     /**
-     * Constructs an IndexOutOfBoundsException detail message.
+     * Constructs an IndexOutOfBoundsException detail com.isliujiao.gpt.chatgpt.message.
      * Of the many possible refactorings of the error handling code,
      * this "outlining" performs best with both server and client VMs.
      */

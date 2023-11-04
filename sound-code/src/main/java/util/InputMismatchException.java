@@ -40,7 +40,7 @@ class InputMismatchException extends NoSuchElementException {
 
     /**
      * Constructs an <code>InputMismatchException</code> with <tt>null</tt>
-     * as its error message string.
+     * as its error com.isliujiao.gpt.chatgpt.message string.
      */
     public InputMismatchException() {
         super();
@@ -48,10 +48,10 @@ class InputMismatchException extends NoSuchElementException {
 
     /**
      * Constructs an <code>InputMismatchException</code>, saving a reference
-     * to the error message string <tt>s</tt> for later retrieval by the
+     * to the error com.isliujiao.gpt.chatgpt.message string <tt>s</tt> for later retrieval by the
      * <tt>getMessage</tt> method.
      *
-     * @param   s   the detail message.
+     * @param   s   the detail com.isliujiao.gpt.chatgpt.message.
      */
     public InputMismatchException(String s) {
         super(s);

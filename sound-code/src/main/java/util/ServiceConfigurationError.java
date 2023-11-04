@@ -63,9 +63,9 @@ public class ServiceConfigurationError
     private static final long serialVersionUID = 74132770414881L;
 
     /**
-     * Constructs a new instance with the specified message.
+     * Constructs a new instance with the specified com.isliujiao.gpt.chatgpt.message.
      *
-     * @param  msg  The message, or <tt>null</tt> if there is no message
+     * @param  msg  The com.isliujiao.gpt.chatgpt.message, or <tt>null</tt> if there is no com.isliujiao.gpt.chatgpt.message
      *
      */
     public ServiceConfigurationError(String msg) {
@@ -73,9 +73,9 @@ public class ServiceConfigurationError
     }
 
     /**
-     * Constructs a new instance with the specified message and cause.
+     * Constructs a new instance with the specified com.isliujiao.gpt.chatgpt.message and cause.
      *
-     * @param  msg  The message, or <tt>null</tt> if there is no message
+     * @param  msg  The com.isliujiao.gpt.chatgpt.message, or <tt>null</tt> if there is no com.isliujiao.gpt.chatgpt.message
      *
      * @param  cause  The cause, or <tt>null</tt> if the cause is nonexistent
      *                or unknown

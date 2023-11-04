@@ -4,15 +4,24 @@ import com.example.javatest.domain.InterfaceClassify;
 import com.example.javatest.domain.InterfaceClassifyDAO;
 import org.junit.Test;
 
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author liujiao
  * @date 2023/8/7 19:16
  */
 public class InterfaceTest {
+
+    @Test
+    public void t(){
+        String s1 = "a";
+        String s2 = new String("a");
+        System.out.println(s1.equals(s2));
+        System.out.println(s1==s2);
+        System.out.println(s2=="a");
+        System.out.println(s2.equals("a"));
+    }
+
 
     @Test
     public void test(){

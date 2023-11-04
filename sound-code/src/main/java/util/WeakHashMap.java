@@ -55,7 +55,7 @@ import java.util.function.Consumer;
  * method.
  *
  * <p> This class is intended primarily for use with key objects whose
- * <tt>equals</tt> methods test for object identity using the
+ * <tt>equals</tt> methods com.isliujiao.gpt.chatgpt.test for object identity using the
  * <tt>==</tt> operator.  Once such a key is discarded it can never be
  * recreated, so it is impossible to do a lookup of that key in a
  * <tt>WeakHashMap</tt> at some later time and be surprised that its entry

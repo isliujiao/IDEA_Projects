@@ -12,7 +12,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>RELEASE</version>
-            <scope>test</scope>
+            <scope>com.isliujiao.gpt.chatgpt.test</scope>
         </dependency>
     </dependencies>
 

@@ -46,7 +46,7 @@ public class LuckyDrawServiceImpl implements LuckyDrawService {
         lotteryConfig.setLotteryDate(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
         lotteryConfigMapper.insertLotteryConfig(lotteryConfig);
 
-        //2、当前奖池奖项明细及数量
+        //2、初始化当前奖池奖项明细及数量
         List<Award> awards = lotteryConfig.getAwards();
         for (Award award : awards) {
             award.setConfigId(primaryKey);

@@ -39,7 +39,7 @@ class EmptyStackException extends RuntimeException {
 
     /**
      * Constructs a new <code>EmptyStackException</code> with <tt>null</tt>
-     * as its error message string.
+     * as its error com.isliujiao.gpt.chatgpt.message string.
      */
     public EmptyStackException() {
     }

@@ -46,7 +46,7 @@ package java.util;
  * which are also {@code PropertyChangeListenerProxy} objects.
  * <p>
  * If the calling method is interested in retrieving the named property
- * then it would have to test the element to see if it is a proxy class.
+ * then it would have to com.isliujiao.gpt.chatgpt.test the element to see if it is a proxy class.
  *
  * @since 1.4
  */

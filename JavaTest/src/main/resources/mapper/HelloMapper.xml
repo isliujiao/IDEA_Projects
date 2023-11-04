@@ -6,30 +6,30 @@
     <insert id="insterDacpAbility" parameterType="com.example.javatest.entity.zhongTai.DacpAbility">
         INSERT INTO dacp_ability
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="null != stataData and '' != stataData">
+            <if com.isliujiao.gpt.chatgpt.test="null != stataData and '' != stataData">
                 stata_data,
             </if>
-            <if test="null != bizCode and '' != bizCode">
+            <if com.isliujiao.gpt.chatgpt.test="null != bizCode and '' != bizCode">
                 biz_code,
             </if>
-            <if test="null != bizDesc and '' != bizDesc">
+            <if com.isliujiao.gpt.chatgpt.test="null != bizDesc and '' != bizDesc">
                 biz_desc,
             </if>
-            <if test="null != abilityId and '' != abilityId">
+            <if com.isliujiao.gpt.chatgpt.test="null != abilityId and '' != abilityId">
                 ability_id
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="null != stataData and '' != stataData">
+            <if com.isliujiao.gpt.chatgpt.test="null != stataData and '' != stataData">
                 #{stataData},
             </if>
-            <if test="null != bizCode and '' != bizCode">
+            <if com.isliujiao.gpt.chatgpt.test="null != bizCode and '' != bizCode">
                 #{bizCode},
             </if>
-            <if test="null != bizDesc and '' != bizDesc">
+            <if com.isliujiao.gpt.chatgpt.test="null != bizDesc and '' != bizDesc">
                 #{bizDesc},
             </if>
-            <if test="null != abilityId and '' != abilityId">
+            <if com.isliujiao.gpt.chatgpt.test="null != abilityId and '' != abilityId">
                 #{abilityId}
             </if>
         </trim>
@@ -159,8 +159,8 @@
 
 
     <insert id="insterStr">
-        INSERT INTO test(`name`)
-        VALUES(#{test})
+        INSERT INTO com.isliujiao.gpt.chatgpt.test(`name`)
+        VALUES(#{com.isliujiao.gpt.chatgpt.test})
     </insert>
 
 </mapper>

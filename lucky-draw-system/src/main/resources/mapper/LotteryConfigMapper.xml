@@ -11,24 +11,24 @@
     <insert id="insertLotteryConfig">
         INSERT INTO lottery_config
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="null != configId and '' != configId">
+            <if com.isliujiao.gpt.chatgpt.test="null != configId and '' != configId">
                 config_id,
             </if>
-            <if test="null != lotteryNumber and '' != lotteryNumber">
+            <if com.isliujiao.gpt.chatgpt.test="null != lotteryNumber and '' != lotteryNumber">
                 lottery_number,
             </if>
-            <if test="null != lotteryDate and '' != lotteryDate">
+            <if com.isliujiao.gpt.chatgpt.test="null != lotteryDate and '' != lotteryDate">
                 lottery_date
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="null != configId and '' != configId">
+            <if com.isliujiao.gpt.chatgpt.test="null != configId and '' != configId">
                 #{configId},
             </if>
-            <if test="null != lotteryNumber and '' != lotteryNumber">
+            <if com.isliujiao.gpt.chatgpt.test="null != lotteryNumber and '' != lotteryNumber">
                 #{lotteryNumber},
             </if>
-            <if test="null != lotteryDate and '' != lotteryDate">
+            <if com.isliujiao.gpt.chatgpt.test="null != lotteryDate and '' != lotteryDate">
                 #{lotteryDate}
             </if>
         </trim>

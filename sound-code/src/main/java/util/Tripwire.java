@@ -56,11 +56,11 @@ final class Tripwire {
 
     /**
      * Produces a log warning, using {@code PlatformLogger.getLogger(className)},
-     * using the supplied message.  The class name of {@code trippingClass} will
-     * be used as the first parameter to the message.
+     * using the supplied com.isliujiao.gpt.chatgpt.message.  The class name of {@code trippingClass} will
+     * be used as the first parameter to the com.isliujiao.gpt.chatgpt.message.
      *
-     * @param trippingClass Name of the class generating the message
-     * @param msg A message format string of the type expected by
+     * @param trippingClass Name of the class generating the com.isliujiao.gpt.chatgpt.message
+     * @param msg A com.isliujiao.gpt.chatgpt.message format string of the type expected by
      * {@link PlatformLogger}
      */
     static void trip(Class<?> trippingClass, String msg) {

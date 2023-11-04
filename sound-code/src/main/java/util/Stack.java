@@ -30,7 +30,7 @@ package java.util;
  * (LIFO) stack of objects. It extends class <tt>Vector</tt> with five
  * operations that allow a vector to be treated as a stack. The usual
  * <tt>push</tt> and <tt>pop</tt> operations are provided, as well as a
- * method to <tt>peek</tt> at the top item on the stack, a method to test
+ * method to <tt>peek</tt> at the top item on the stack, a method to com.isliujiao.gpt.chatgpt.test
  * for whether the stack is <tt>empty</tt>, and a method to <tt>search</tt>
  * the stack for an item and discover how far it is from the top.
  * <p>

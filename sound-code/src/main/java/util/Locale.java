@@ -1938,7 +1938,7 @@ public final class Locale implements Cloneable, Serializable {
             return new MessageFormat(displayNamePattern).format(displayNames);
         }
         else {
-            // If we cannot get the message format pattern, then we use a simple
+            // If we cannot get the com.isliujiao.gpt.chatgpt.message format pattern, then we use a simple
             // hard-coded pattern.  This should not occur in practice unless the
             // installation is missing some core files (FormatData etc.).
             StringBuilder result = new StringBuilder();

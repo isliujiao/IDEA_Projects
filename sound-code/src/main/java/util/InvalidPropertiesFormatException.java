@@ -61,9 +61,9 @@ public class InvalidPropertiesFormatException extends IOException {
 
    /**
     * Constructs an InvalidPropertiesFormatException with the specified
-    * detail message.
+    * detail com.isliujiao.gpt.chatgpt.message.
     *
-    * @param   message   the detail message. The detail message is saved for
+    * @param   message   the detail com.isliujiao.gpt.chatgpt.message. The detail com.isliujiao.gpt.chatgpt.message is saved for
     *          later retrieval by the {@link Throwable#getMessage()} method.
     */
     public InvalidPropertiesFormatException(String message) {
